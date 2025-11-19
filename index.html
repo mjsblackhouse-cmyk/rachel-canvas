@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -16,7 +15,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.5;
             color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
             min-height: 100vh;
             padding: 20px;
         }
@@ -26,14 +25,14 @@
             margin: 0 auto;
             background: white;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             overflow: hidden;
         }
 
         .canvas-header {
-            background: linear-gradient(135deg, #667eea, #764ba2);
+            background: linear-gradient(135deg, #2c5aa0, #5a9fd4);
             color: white;
-            padding: 40px;
+            padding: 30px;
             text-align: center;
         }
 
@@ -42,227 +41,196 @@
             margin-bottom: 10px;
         }
 
-        .canvas-header .subtitle {
-            font-size: 1.2em;
-            opacity: 0.95;
-            margin-bottom: 5px;
-        }
-
-        .canvas-header .context {
-            font-size: 1em;
-            opacity: 0.85;
-            font-style: italic;
+        .canvas-header p {
+            font-size: 1.1em;
+            opacity: 0.9;
         }
 
         .canvas-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: auto auto auto auto;
             gap: 0;
+            min-height: 900px;
         }
 
         .canvas-section {
-            padding: 30px;
+            padding: 25px;
             border: 1px solid #e8e8e8;
-            min-height: 300px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
         }
 
-        .canvas-section h2 {
-            color: #667eea;
-            margin-bottom: 20px;
-            font-size: 1.4em;
-            border-bottom: 3px solid #667eea;
-            padding-bottom: 10px;
+        .canvas-section h3 {
+            color: #2c5aa0;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+            border-bottom: 2px solid #5a9fd4;
+            padding-bottom: 8px;
         }
 
-        .full-width {
-            grid-column: 1 / -1;
+        .canvas-content {
+            flex: 1;
+            font-size: 0.95em;
+            line-height: 1.6;
         }
 
-        .insight-box {
-            background: #f8f9ff;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #667eea;
-            margin: 15px 0;
-            font-style: italic;
-        }
-
-        .insight-box.critical {
-            background: #fff4e6;
-            border-left-color: #f39c12;
-        }
-
-        .value-item {
-            background: #e8f5e8;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border-left: 4px solid #27ae60;
-        }
-
-        .value-item strong {
-            color: #27ae60;
-        }
-
-        .tension-item {
-            background: #fff3cd;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border-left: 4px solid #f39c12;
-        }
-
-        .tension-item strong {
-            color: #f39c12;
-        }
-
-        .strength-item {
-            background: #e3f2fd;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border-left: 4px solid #2196f3;
-        }
-
-        .strength-item strong {
-            color: #2196f3;
-        }
-
-        .drain-item {
-            background: #ffebee;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border-left: 4px solid #e74c3c;
-        }
-
-        .drain-item strong {
-            color: #e74c3c;
-        }
-
-        .discovery-item {
-            background: #f3e5f5;
-            padding: 12px 15px;
-            margin: 8px 0;
-            border-radius: 6px;
-            border-left: 4px solid #9c27b0;
-        }
-
-        .discovery-item strong {
-            color: #9c27b0;
-        }
-
-        .quote {
-            font-style: italic;
-            color: #666;
-            padding-left: 15px;
-            border-left: 3px solid #ddd;
+        .canvas-content ul {
             margin: 10px 0;
+            padding-left: 20px;
         }
 
-        .trade-off-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .trade-off-item {
-            background: #f8f9fa;
-            padding: 15px;
-            border-radius: 6px;
-            border: 2px solid #667eea;
-        }
-
-        .trade-off-item .dimension {
-            font-weight: bold;
-            color: #667eea;
+        .canvas-content li {
             margin-bottom: 8px;
         }
 
-        .trade-off-item .score {
-            font-size: 1.3em;
-            color: #333;
+        .strength-item {
+            background: #e8f5e8;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 4px solid #27ae60;
         }
 
-        .aspirational-box {
-            background: linear-gradient(135deg, #fff5f5, #ffe6f0);
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #e91e63;
-            margin: 15px 0;
-        }
-
-        .aspirational-box h3 {
-            color: #e91e63;
-            margin-bottom: 10px;
-        }
-
-        .matrix-visual {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 15px 0;
-            text-align: center;
-        }
-
-        .matrix-quadrant {
-            display: inline-block;
-            padding: 10px 15px;
-            margin: 5px;
-            border-radius: 6px;
-            font-weight: bold;
-        }
-
-        .energising-skilled {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .energising-stretch {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-
-        .draining-skilled {
+        .development-item {
             background: #fff3cd;
-            color: #856404;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 4px solid #f39c12;
         }
 
-        .draining-stretch {
-            background: #f8d7da;
-            color: #721c24;
+        .goal-item {
+            background: #e3f2fd;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 4px solid #2196f3;
         }
 
-        .timeline {
-            background: #f8f9fa;
-            padding: 20px;
+        .metric-item {
+            background: #f3e5f5;
+            padding: 8px 12px;
+            margin: 5px 0;
+            border-radius: 5px;
+            border-left: 4px solid #9c27b0;
+        }
+
+        .section-vision {
+            grid-column: 1 / -1;
+            background: #f8f9ff;
+        }
+
+        .section-decision {
+            grid-column: 1 / -1;
+            background: #f0f6ff;
+        }
+
+        .section-strengths {
+            background: #f0f8f0;
+        }
+
+        .section-values {
+            background: #fff0f5;
+        }
+
+        .section-context {
+            background: #f0f6ff;
+        }
+
+        .section-pathways {
+            background: #e8f4fd;
+        }
+
+        .section-tradeoffs {
+            background: #f5f0ff;
+        }
+
+        .section-obstacles {
+            background: #fff0f0;
+        }
+
+        .section-next {
+            background: #f0fff4;
+        }
+
+        .section-toolkit {
+            grid-column: 1 / -1;
+            background: #fff8f0;
+        }
+
+        .timeline-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 15px;
+        }
+
+        .timeline-phase {
+            background: white;
+            padding: 15px;
             border-radius: 8px;
-            margin: 15px 0;
+            border-top: 4px solid #5a9fd4;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
-        .timeline-item {
-            padding: 10px 0;
-            border-bottom: 1px solid #ddd;
+        .timeline-phase h4 {
+            color: #2c5aa0;
+            margin-bottom: 10px;
+            font-size: 1em;
         }
 
-        .timeline-item:last-child {
-            border-bottom: none;
+        .timeline-phase ul {
+            font-size: 0.9em;
         }
 
-        .timeline-item strong {
-            color: #667eea;
+        .insight-box {
+            background: #e8f4f8;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #2980b9;
+            margin: 10px 0;
+            font-style: italic;
         }
 
-        @media (max-width: 968px) {
+        .pathway-box {
+            background: #f5f5f5;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border-left: 4px solid #5a9fd4;
+        }
+
+        .pathway-box strong {
+            color: #2c5aa0;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .critical-insight {
+            background: #fef3cd;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border-left: 4px solid #d39e00;
+        }
+
+        @media (max-width: 768px) {
             .canvas-grid {
                 grid-template-columns: 1fr;
             }
-
-            .trade-off-grid {
+            
+            .section-vision,
+            .section-decision,
+            .section-toolkit {
+                grid-column: 1;
+            }
+            
+            .timeline-container {
                 grid-template-columns: 1fr;
             }
-
+            
             .canvas-header h1 {
                 font-size: 2em;
             }
@@ -272,669 +240,249 @@
 <body>
     <div class="canvas-container">
         <div class="canvas-header">
-            <h1>Rachel Dawson</h1>
-            <div class="subtitle">Director, EY | 33 years old</div>
-            <div class="context">Coaching Canvas - October 2025 | Sessions 1-2 Complete</div>
+            <h1>Leadership Coaching Canvas</h1>
+            <p>Rachel Dawson - EY Director, Career Transition & Leadership Development</p>
         </div>
         
         <div class="canvas-grid">
-            <div class="canvas-section full-width">
-                <h2>🎯 Current Situation & Context</h2>
-                <div class="insight-box">
-                    "If you'd asked me two years ago, I probably would have said I would stay at EY... I don't think that's true anymore... I'd want to do something completely different."
-                </div>
-                
-                <p><strong>Professional:</strong> Director at EY for 10.5 years, started as Perth grad. Recently promoted but team restructure removed valued colleagues and leadership. Partnership track available but not compelling.</p>
-                
-                <p><strong>Personal:</strong> Married to Josh, recently bought house in Melbourne. Primary breadwinner. Working on family planning ("still working on the baby thing"). Josh's role currently Melbourne-centric.</p>
-                
-                <p><strong>Geographic:</strong> Not wedded to Melbourne long-term. Strong friendship network in Sydney. Perth possible longer-term ("don't tell mum!").</p>
-
-                <div class="insight-box critical">
-                    <strong>Recent NAB Situation:</strong> Five-interview process for transformation delivery role. Right on paper (business-tech bridge, right level, Melbourne-based, referral) but Rachel decided to withdraw before role went on hold. Key insight: "I wasn't excited about it... not excited enough to tide me over the poor behaviour." Reveals need for BOTH role alignment AND organisational culture standards.
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>💎 Core Values (Tier 1: Non-Negotiables)</h2>
-                
-                <div class="value-item">
-                    <strong>Respect & Dignity in Workplace</strong><br>
-                    "There's a baseline level of respect for how you should speak to people... when people breach that... I find that outrageous." Strongest emotional response - this is dealbreaker territory.
-                </div>
-
-                <div class="value-item">
-                    <strong>Collaborative Relationships</strong><br>
-                    Scored 80/20 collaboration vs. autonomy. When asked team vs. organisation: "Probably the team" (no hesitation). Team quality matters more than organisational prestige.
-                </div>
-
-                <div class="value-item">
-                    <strong>Tangible Impact</strong><br>
-                    Must see practical outcomes. Prefers embedded delivery over external advisory. "I don't like advising my clients and get a lot of joy out of that."
-                </div>
-
-                <div class="value-item">
-                    <strong>Ethical Integrity</strong><br>
-                    Righteous indignation about unethical behaviour, expressed diplomatically. Works behind scenes for change rather than public confrontation.
-                </div>
-
-                <div class="quote">
-                    "When I see someone on the phone in the office and the way they're talking to someone... it shocks me."
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>🌟 Values Exemplar: Former Boss</h2>
-                
-                <div class="insight-box">
-                    Rachel's former boss (moved in restructure) represents leadership she both admires and requires:
-                </div>
-
-                <ul style="margin-left: 20px; margin-top: 15px;">
-                    <li>"Really genuinely cares about people"</li>
-                    <li>Remembers colleague's mother's illness years later, continues checking in</li>
-                    <li>Remembers personal details: "If we're going for dinner, he's like, you don't eat pork"</li>
-                    <li>"Very easy to be like, I'm so busy... client comes first... but he genuinely cares about team"</li>
-                </ul>
-
-                <p style="margin-top: 15px;"><strong>Significance:</strong> This relationship loss from restructure was more impactful than initially recognised. Sets standard for leadership environment she requires.</p>
-
-                <div class="quote">
-                    "He really remembers the things that people outside of the work context... I just find that really impressive."
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>⚡ What Energises Rachel</h2>
-                
-                <div class="strength-item">
-                    <strong>Leading & Organising</strong><br>
-                    Natural leader who creates structure and organises people toward outcomes. "I'm the one who suggests the Adelaide trip, provides venue options, confirms attendees."
-                </div>
-
-                <div class="strength-item">
-                    <strong>Collaborating & Embedding</strong><br>
-                    Being "in it" with teams. Mentoring others. Collaborative problem-solving. Suncorp demerger stood out because she was embedded, not external advisory.
-                </div>
-
-                <div class="strength-item">
-                    <strong>Stakeholder Influence (When Respectful)</strong><br>
-                    Good with people, enjoys stakeholder relationships. Can have challenging conversations about different perspectives. But becomes draining when people are "rude or unreasonable" or "not helping solve problem together."
-                </div>
-
-                <div class="matrix-visual">
-                    <h3 style="margin-bottom: 15px;">Energy Matrix Positioning</h3>
-                    <div class="matrix-quadrant energising-skilled">Energising + Skilled:<br>Leading, Collaborating, Embedding</div>
-                    <div class="matrix-quadrant energising-stretch">Energising + Stretch:<br>Strategic Influence, Executive Presence</div>
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>🔋 What Drains Rachel</h2>
-                
-                <div class="drain-item">
-                    <strong>Business Development</strong><br>
-                    Particularly "selling what we'll figure out." Good at building relationships but struggles with confidence to say "we'll help you" without delivery certainty. This is values misalignment, not imposter syndrome.
-                </div>
-
-                <div class="drain-item">
-                    <strong>Deep Analytical Work</strong><br>
-                    Numbers, data analysis, report writing. Can do it but effortful rather than energising. Prefers practical application over theoretical analysis.
-                </div>
-
-                <div class="drain-item">
-                    <strong>Organisational Politics</strong><br>
-                    Will navigate when necessary but excessive politics with poor-faith actors is offensive and draining. "A lot of partners are just connector of people... I don't know if they're doing a good job."
-                </div>
-
-                <div class="quote">
-                    "I would struggle to introduce people I've built good relationships with and be like, now that person's going to help you, or even just have confidence to say, we'll help you and figure it out."
-                </div>
-
-                <div class="matrix-visual">
-                    <div class="matrix-quadrant draining-skilled">Draining + Skilled:<br>Politics Navigation, Report Writing</div>
-                    <div class="matrix-quadrant draining-stretch">Draining + Stretch:<br>Business Development, "Selling Unknowns"</div>
-                </div>
-            </div>
-
-            <div class="canvas-section full-width">
-                <h2>🔍 Major Discoveries: Identity & Direction</h2>
-
-                <div class="discovery-item">
-                    <strong>Not a Consultant at Heart</strong><br>
-                    "The consulting piece, I don't feel that strongly wedded to... it's more the getting the thing done, driving the outcome." Rachel is a delivery leader who happens to work in consulting, not someone fulfilled by advisory model.
-                </div>
-
-                <div class="discovery-item">
-                    <strong>Partnership Track Definitively Ruled Out</strong><br>
-                    "Not that interesting to me right now... maybe it's less important to me at the moment as a skill to build." Partnership requires capabilities she doesn't value (individual sales vs. collaborative delivery) and finds ethically uncomfortable (promising uncertain outcomes).
-                </div>
-
-                <div class="discovery-item">
-                    <strong>Financial Services as Default, Not Passion</strong><br>
-                    Likes FS because it's "relatable" and "everyone gets it" - comprehensibility matters more than passion. Open to adjacent sectors if they meet criteria.
-                </div>
-
-                <div class="discovery-item">
-                    <strong>Two-Year Evolution</strong><br>
-                    Two years ago would have stayed at EY with financial freedom. Now wouldn't. Shift catalysed by: restructure + family planning + observation of partner struggles + disillusionment with consulting model.
-                </div>
-            </div>
-
-            <div class="canvas-section full-width">
-                <h2>🌈 Aspirational Paths (If Money Not a Factor)</h2>
-
-                <div class="aspirational-box">
-                    <h3>Path A: Entrepreneurship (With Partner)</h3>
-                    <p>"Love planning events and creating things people enjoy... find someone with idea... they've got creative side, I've got execution capability... team up and build something from scratch."</p>
-                    <p><strong>Not solo entrepreneur</strong> - requires collaborative partner. Examples: event planning, experience creation, building something tangible people value.</p>
-                </div>
-
-                <div class="aspirational-box">
-                    <h3>Path B: Meaningful Impact</h3>
-                    <p>"Working for charity organisation... take consulting skill sets and help them... more fulfilling than helping big banks save money."</p>
-                    <p><strong>Preference:</strong> Cancer Council or medical/health causes with "real people impact." Would prefer "at the coal face working with people" over corporate charity bureaucracy. Even considered overseas volunteering for tangible impact.</p>
-                </div>
-
-                <div class="insight-box">
-                    <strong>Common Themes:</strong> Creating tangible outcomes people value | Collaborative partnership | Human impact over commercial optimisation | Using existing capabilities in new context | Visible, felt experience of making difference
-                </div>
-
-                <p style="margin-top: 15px;"><strong>Reality Check:</strong> Neither path currently viable given financial/life stage realities. But they reveal "true north" when constraints removed - provide compass heading for decision-making.</p>
-            </div>
-
-            <div class="canvas-section">
-                <h2>⚖️ Internal Tensions & Ambivalence</h2>
-
-                <div class="tension-item">
-                    <strong>Justice vs. Generosity</strong><br>
-                    Wants to be generous (giving more than required) but deeply values fairness. Struggle: "Both things can be true... didn't seem like inverse." May struggle when constraints prevent being generous while maintaining equity.
-                </div>
-
-                <div class="tension-item">
-                    <strong>Industriousness vs. Contentment</strong><br>
-                    Achievement drive without accompanying satisfaction. "I don't sit on contentment for very long... what's the next thing?" Risk of burnout from continuous striving without acknowledging success.
-                </div>
-
-                <div class="tension-item">
-                    <strong>Ambition vs. Moderation</strong><br>
-                    "I'm not big goal setter... more do the best with what's in front of me." Reactive to opportunities rather than proactive career planning. Needs help translating achievement drive into strategic direction.
-                </div>
-
-                <div class="tension-item">
-                    <strong>Self-Criticism vs. Self-Compassion</strong><br>
-                    Learning to be kinder to herself but naturally self-critical. May struggle with visibility at senior levels if overly self-critical. Potential imposter syndrome at executive level.
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>🔄 Trade-Off Profile (Partial - To Complete)</h2>
-
-                <div class="trade-off-grid">
-                    <div class="trade-off-item">
-                        <div class="dimension">Development vs. Deployment</div>
-                        <div class="score">70 / 30</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Favours development - ready for next level of leadership</p>
+            <!-- Vision Section -->
+            <div class="canvas-section section-vision">
+                <h3>🎯 Vision & Purpose</h3>
+                <div class="canvas-content">
+                    <div class="insight-box">
+                        From consultant to catalyst: building strategy and impact from within organizations that matter, leading teams of people I care about, visible to those I serve.
                     </div>
-
-                    <div class="trade-off-item">
-                        <div class="dimension">Security vs. Growth</div>
-                        <div class="score">60-70 / 40-30</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Favours security - family planning consideration</p>
-                    </div>
-
-                    <div class="trade-off-item">
-                        <div class="dimension">Autonomy vs. Collaboration</div>
-                        <div class="score">20 / 80</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Strongly favours collaboration - core to identity</p>
-                    </div>
-
-                    <div class="trade-off-item">
-                        <div class="dimension">Mastery vs. Variety</div>
-                        <div class="score">50 / 50</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Balanced - open to both depth and breadth</p>
-                    </div>
-
-                    <div class="trade-off-item">
-                        <div class="dimension">Income vs. Meaning</div>
-                        <div class="score">60-70 / 40-30</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Favours income but willing to trade some for meaning</p>
-                    </div>
-
-                    <div class="trade-off-item">
-                        <div class="dimension">Geography vs. Career</div>
-                        <div class="score">30 / 70</div>
-                        <p style="font-size: 0.9em; margin-top: 5px;">Currently favours career but geography increasingly important</p>
-                    </div>
-                </div>
-
-                <p style="margin-top: 15px; font-style: italic; color: #666;"><strong>Note:</strong> Trade-off matrix to be completed and validated in Session 3</p>
-            </div>
-
-            <div class="canvas-section full-width">
-                <h2>🎭 Virtues Assessment: Leadership Profile</h2>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 20px;">
-                    <div>
-                        <h3 style="color: #667eea; margin-bottom: 10px;">Decision-Making</h3>
-                        <ul style="margin-left: 20px;">
-                            <li>Temperance (thoughtful consideration)</li>
-                            <li>Practical Wisdom (experience-based)</li>
-                            <li>Decisiveness (acts despite ambiguity)</li>
-                            <li>Open-mindedness (considers others)</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 style="color: #667eea; margin-bottom: 10px;">Leadership Style</h3>
-                        <ul style="margin-left: 20px;">
-                            <li>Humility (learns from others)</li>
-                            <li>Friendliness (warm connections)</li>
-                            <li>Leadership (takes responsibility)</li>
-                            <li>Diplomacy (behind-scenes change)</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 style="color: #667eea; margin-bottom: 10px;">Work Orientation</h3>
-                        <ul style="margin-left: 20px;">
-                            <li>Impact (meaningful difference)</li>
-                            <li>Practical Mastery (application focus)</li>
-                            <li>Service (helping without return)</li>
-                            <li>Flexibility (context-adaptive)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="insight-box" style="margin-top: 20px;">
-                    <strong>Servant Leadership Profile:</strong> Leads through collaboration, relationship-building, and inclusive decision-making. Creates psychological safety. Pragmatic action orientation focused on tangible outcomes. Strong moral foundation expressed diplomatically. Relationship-primacy in all domains.
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>✨ Who Rachel Actually Is</h2>
-
-                <p style="margin-bottom: 15px;"><strong>A collaborative delivery leader who:</strong></p>
-
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li>Leads through relationship-building and inclusive decision-making</li>
-                    <li>Finds satisfaction in tangible outcomes that benefit people</li>
-                    <li>Makes pragmatic decisions with incomplete information</li>
-                    <li>Works effectively in complex environments requiring stakeholder alignment</li>
-                    <li>Values respect, integrity, and human dignity above politics</li>
-                    <li>Prefers embedded execution over external advisory</li>
-                    <li>Derives motivation from team success over individual recognition</li>
-                    <li>Brings practical wisdom and decisive action to delivery challenges</li>
-                </ul>
-
-                <div class="quote" style="margin-top: 15px;">
-                    "I'm motivated to do a good job for other people. I'm not necessarily motivated to do a good job for myself, but I want other people to feel like I've done a good job."
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>🚫 Who Rachel Is NOT</h2>
-
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li>A business developer/salesperson who confidently sells undefined work</li>
-                    <li>A political operator comfortable with organisational manoeuvring</li>
-                    <li>An individual heroic achiever seeking spotlight or recognition</li>
-                    <li>A pure strategist/advisor without delivery accountability</li>
-                    <li>Someone driven primarily by titles, status, or compensation</li>
-                    <li>A person comfortable selling capabilities before confirming delivery certainty</li>
-                    <li>Someone who tolerates disrespect or incivility in professional interactions</li>
-                    <li>A consultant at heart (she's a delivery leader in consulting)</li>
-                </ul>
-
-                <div class="quote" style="margin-top: 15px;">
-                    "When I was working in mining with engineers who've done it 40 years... I was just like, I'm not gonna tell you anything you don't know."
-                </div>
-            </div>
-
-            <div class="canvas-section full-width">
-                <h2>🎯 What Rachel Needs in Next Role</h2>
-
-                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                    <div>
-                        <h3 style="color: #27ae60; margin-bottom: 15px;">✓ Must Have</h3>
-                        <div class="value-item">Collaborative team environment with mutual respect</div>
-                        <div class="value-item">Embedded delivery leadership (not advisory)</div>
-                        <div class="value-item">Visible, tangible impact she can see</div>
-                        <div class="value-item">Comprehensible domain where she can add value confidently</div>
-                        <div class="value-item">Ethical organisational culture</div>
-                        <div class="value-item">Financial security adequate for family planning</div>
-                        <div class="value-item">Development toward executive presence and strategic influence</div>
-                    </div>
-
-                    <div>
-                        <h3 style="color: #e74c3c; margin-bottom: 15px;">✗ Deal-Breakers</h3>
-                        <div class="drain-item">Environments that breach basic respect standards</div>
-                        <div class="drain-item">Highly political cultures with poor-faith actors</div>
-                        <div class="drain-item">Pure advisory roles without delivery accountability</div>
-                        <div class="drain-item">Work lacking meaningful human impact</div>
-                        <div class="drain-item">Role requiring extensive business development</div>
-                        <div class="drain-item">Geographic constraint limiting family flexibility indefinitely</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="canvas-section full-width">
-                <h2>🎯 Likely Best Fit: Industry Delivery Leadership</h2>
-
-                <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 20px; margin-top: 20px;">
-                    <div>
-                        <h3 style="color: #667eea; margin-bottom: 15px;">Why This Aligns</h3>
-                        <ul style="margin-left: 20px; line-height: 1.8;">
-                            <li>Embedded in organisation (not external advisory)</li>
-                            <li>Transformation delivery (her strength zone)</li>
-                            <li>Collaborative team environment</li>
-                            <li>Visible, tangible outcomes</li>
-                            <li>Develops executive presence she admires</li>
-                            <li>Uses business-technology bridging capability</li>
-                            <li>Potentially more geographic flexibility than partnership</li>
-                            <li>Financial security adequate for family planning</li>
-                            <li>Meaningful impact possible depending on organisation/sector</li>
-                        </ul>
-                    </div>
-
-                    <div>
-                        <h3 style="color: #f39c12; margin-bottom: 15px;">Concerns to Address</h3>
-                        <ul style="margin-left: 20px; line-height: 1.8;">
-                            <li>Still requires navigating politics at senior levels</li>
-                            <li>May involve difficult personalities</li>
-                            <li>Maternity benefits may not match EY</li>
-                            <li>Less immediately lucrative than partnership</li>
-                            <li>Need to assess culture carefully</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="insight-box" style="margin-top: 20px;">
-                    <strong>Adjacent Possibilities Worth Exploring:</strong> Healthcare transformation (FS skills + meaningful impact) | Government/public sector (purpose-driven) | Scale-up/growth company exec roles (transformation energy, less bureaucracy) | Boutique consulting with delivery focus | Portfolio approach (part-time exec + board development)
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>🧭 Decision-Making Patterns</h2>
-
-                <h3 style="color: #667eea; margin-bottom: 10px;">How Rachel Decides</h3>
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li>Combination of practical fit AND values alignment (both required)</li>
-                    <li>Team quality weighted as primary criterion</li>
-                    <li>Will not compromise respect/culture standards regardless of role appeal</li>
-                    <li>Prefers embedded relationships over transactional opportunities</li>
-                    <li>Good judgment about sunk costs (knows when to persist vs. pivot)</li>
-                </ul>
-
-                <h3 style="color: #667eea; margin-top: 20px; margin-bottom: 10px;">Risk Assessment</h3>
-                <ul style="margin-left: 20px; line-height: 1.8;">
-                    <li>Practical wisdom: context-dependent assessment</li>
-                    <li>Comfortable with ambiguity and incomplete information</li>
-                    <li>Decisive when necessary but open-minded to input</li>
-                    <li>Primary breadwinner role creates real security needs</li>
-                </ul>
-
-                <div class="quote" style="margin-top: 15px;">
-                    "I knew that deadline for the bank acquisition sale was not moving, so there was no time to be like, oh well, this isn't gonna work... you just had to break down the walls. But if a use case isn't working, I'd be like, okay, let's put that down and try something else."
-                </div>
-            </div>
-
-            <div class="canvas-section">
-                <h2>📋 Session 3: Remaining Work</h2>
-
-                <h3 style="color: #667eea; margin-bottom: 10px;">To Complete
-
-(90 minutes)</h3>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <strong>Complete Trade-Off Framework (15 min)</strong><br>
-                    Validate partial matrix, synthesise into weighted decision criteria
-                </div>
-                <div class="timeline-item">
-                    <strong>Define Zone of Interest (20 min)</strong><br>
-                    Sector, role type, organisation context, level, development focus, non-negotiables, deal-breakers - with specificity
-                </div>
-                <div class="timeline-item">
-                    <strong>Reality Test Framework (20 min)</strong><br>
-                    Apply to EY partnership path, NAB-type role, other possibilities; identify information gaps
-                </div>
-                <div class="timeline-item">
-                    <strong>Confront the Choice (15 min)</strong><br>
-                    Name the real decision, surface remaining blocks, distinguish legitimate concerns from fear
-                </div>
-                <div class="timeline-item">
-                    <strong>Action Plan & Independence (10 min)</strong><br>
-                    Information gathering, timeline, self-coaching framework, capability transfer
-                </div>
-            </div>
-
-            <div class="insight-box" style="margin-top: 15px;">
-                <strong>Goal:</strong> Rachel leaves with complete decision architecture she can use independently and confidently. Not infinite coaching, but robust framework for making this decision - and future decisions - well.
-            </div>
-        </div>
-
-        <div class="canvas-section full-width">
-            <h2>📊 Progress Summary: Foundation Complete</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px; margin-top: 20px;">
-                <div>
-                    <h3 style="color: #27ae60; margin-bottom: 15px;">✓ Completed</h3>
-                    <div class="value-item">Core values explicitly identified and validated</div>
-                    <div class="value-item">Partnership track definitively ruled out</div>
-                    <div class="value-item">Consulting identity questioned; delivery leadership affirmed</div>
-                    <div class="value-item">Financial freedom thought experiment revealed aspirational direction</div>
-                    <div class="value-item">Team primacy over organisational prestige established</div>
-                    <div class="value-item">Non-negotiables clarified (respect, collaboration, impact, ethics)</div>
-                    <div class="value-item">Energy mapping partially completed</div>
-                    <div class="value-item">NAB situation provided decision-making pattern insight</div>
-                </div>
-
-                <div>
-                    <h3 style="color: #f39c12; margin-bottom: 15px;">⏳ To Complete</h3>
-                    <div class="tension-item">Finish and validate trade-off matrix</div>
-                    <div class="tension-item">Define zone of interest with specificity</div>
-                    <div class="tension-item">Develop evaluation framework for opportunities</div>
-                    <div class="tension-item">Reality-test framework against actual options</div>
-                    <div class="tension-item">Create information-gathering action plan</div>
-                    <div class="tension-item">Establish decision timeline</div>
-                    <div class="tension-item">Build self-coaching capability</div>
-                    <div class="tension-item">Transfer complete decision-making architecture</div>
-                </div>
-            </div>
-        </div>
-
-        <div class="canvas-section full-width">
-            <h2>💬 Key Quotes: Rachel in Her Own Words</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                <div>
-                    <h3 style="color: #667eea; margin-bottom: 15px;">On Identity & Values</h3>
+                    <p><strong>Core Transition:</strong> Moving from external advisory (EY project delivery) to embedded strategic leadership where I can drive transformation while building and leading the team implementing it.</p>
                     
-                    <div class="quote">
-                        "If you'd asked me two years ago... I probably would have said I would stay at EY... I don't think that's true anymore."
-                    </div>
-
-                    <div class="quote">
-                        "The consulting piece, I don't feel that strongly wedded to... it's more the getting the thing done, driving the outcome."
-                    </div>
-
-                    <div class="quote">
-                        "There's a baseline level of respect for how you should speak to people in a workplace, and when people breach that... I find that outrageous."
-                    </div>
-
-                    <div class="quote">
-                        "I'm motivated to do a good job for other people. I'm not necessarily motivated to do a good job for myself."
-                    </div>
-                </div>
-
-                <div>
-                    <h3 style="color: #667eea; margin-bottom: 15px;">On Work & Leadership</h3>
+                    <p><strong>Life Integration:</strong> Creating a professional trajectory that accommodates motherhood, aligns with personal values, and doesn't require sacrificing either family or career authenticity.</p>
                     
-                    <div class="quote">
-                        "I love planning events and creating things people enjoy... find someone with idea... they've got creative side, I've got execution capability."
+                    <p><strong>Authentic Leadership:</strong> Operating in roles where baseline professional respect is non-negotiable, and where servant leadership and genuine care for people are valued as much as business results.</p>
+                </div>
+            </div>
+
+            <!-- Decision Architecture Section -->
+            <div class="canvas-section section-decision">
+                <h3>🔄 Decision Architecture: The Three Pathways</h3>
+                <div class="canvas-content">
+                    <div class="pathway-box">
+                        <strong>Pathway A: EY Partnership Track</strong>
+                        Requires business development capability and increasing exposure to high-stakes client relationships, political navigation, and organizational visibility. More prestige and security. Trade-off: Moving away from delivery impact and toward selling. Status: Not currently energizing.
                     </div>
-
-                    <div class="quote">
-                        "I would struggle to introduce people I've built good relationships with... or have confidence to say, we'll help you and figure it out."
+                    
+                    <div class="pathway-box">
+                        <strong>Pathway B: Industry Transformation Role (MOST ALIGNED)</strong>
+                        Head of / Executive Manager position in financial services or adjacent sector. Embedded in the transformation, leading the team delivering it. Tangible impact, collaborative environment, closer to the work. Trade-off: Slightly lower income, learning curve, some organizational politics. Status: Aligned with strengths and values.
                     </div>
-
-                    <div class="quote">
-                        "More fulfilling than helping big banks save money or make more money."
+                    
+                    <div class="pathway-box">
+                        <strong>Pathway C: Purpose-Driven Long-Term Vision</strong>
+                        Own business (partnering with creative), charity/health sector leadership, or coalface work with direct community impact. Maximum meaning and alignment. Trade-off: Significant income reduction, requires platform-building first. Status: Aspirational 3-5 year possibility.
                     </div>
+                    
+                    <div class="critical-insight">
+                        <strong>Critical Realization:</strong> Two years ago, staying at EY felt certain. Now, leaving feels possible and even necessary. This is not drift—it's significant readiness. The question is not IF to move, but WHEN and WHERE.
+                    </div>
+                </div>
+            </div>
 
-                    <div class="quote">
-                        "I wasn't excited about it... not excited enough to tide me over the poor behaviour."
+            <!-- Strengths Section -->
+            <div class="canvas-section section-strengths">
+                <h3>💪 Leadership Strengths</h3>
+                <div class="canvas-content">
+                    <div class="strength-item">
+                        <strong>Servant Leadership:</strong> Leads by organizing, including, and genuinely caring about team members. Natural at creating psychological safety.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Delivery Excellence:</strong> Comfortable in complex, high-stakes transformation delivery. Clear on scope, timeline, and team capability.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Relationship Architecture:</strong> Builds trust across levels and functions. Gets people who usually don't work together to collaborate effectively.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Strategic Thinking:</strong> Sees the broader narrative beyond immediate project requirements. Connects dots across organizational systems.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Authenticity:</strong> Doesn't perform versions of herself. This is a competitive advantage in building credibility with teams.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values Section -->
+            <div class="canvas-section section-values">
+                <h3>💎 Core Values & Non-Negotiables</h3>
+                <div class="canvas-content">
+                    <div class="critical-insight">
+                        <strong>Baseline Respect:</strong> Professional respect in the role is a DEAL-BREAKER, not negotiable. Any opportunity must pass this test.
+                    </div>
+                    
+                    <div class="strength-item">
+                        <strong>Tangible Impact:</strong> Wants to be close to outcomes, not removed from delivery. Can see the work matters to people who matter.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Team-Over-Organization:</strong> More motivated by the people she works with than organizational prestige or hierarchy.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Authenticity in Practice:</strong> Won't fake business development or sales. Doesn't energize her; feels inauthentic.
+                    </div>
+                    <div class="strength-item">
+                        <strong>Sustainable Motherhood:</strong> Seeking roles where career progression doesn't require absent parenting or constant compromise.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Life Context -->
+            <div class="canvas-section section-context">
+                <h3>🏠 Life Context & Constraints</h3>
+                <div class="canvas-content">
+                    <p><strong>Family:</strong> Married to Josh (supportive), pregnant with first child (due [month]). Josh works in [sector]. Household requires approximately [income] to maintain current lifestyle while enabling choice.</p>
+                    
+                    <p><strong>Geographic:</strong> Melbourne-based. Some flexibility for corporate opportunities but prefers to remain in Victoria.</p>
+                    
+                    <p><strong>Psychological:</strong> 60-70% motivated by security, 30-40% by meaning. That meaning percentage is GROWING—evidenced by recent "money doesn't matter if it's the wrong role" shift.</p>
+                    
+                    <p><strong>Financial Security:</strong> Has sufficient runway to explore (savings, Josh's income). Trade-off profile allows 10-15% income reduction if values-aligned.</p>
+                </div>
+            </div>
+
+            <!-- Exploration Pathways -->
+            <div class="canvas-section section-pathways">
+                <h3>🔍 Active Exploration: Information & Network</h3>
+                <div class="canvas-content">
+                    <p><strong>Information Gathering Priorities:</strong></p>
+                    <ul>
+                        <li>Industry salary benchmarks for Head of/Executive Manager transformation roles</li>
+                        <li>Maternity leave and flexible work policies in target organizations</li>
+                        <li>Market demand and timing for transformation delivery leadership</li>
+                        <li>Melbourne vs Sydney opportunities in financial services sector</li>
+                    </ul>
+                    
+                    <p><strong>Network Activation (Confidential):</strong></p>
+                    <ul>
+                        <li>2-3 trusted contacts in transformation/financial services space</li>
+                        <li>Approach: "Seeking to understand the market for embedded transformation leadership" (not "leaving EY")</li>
+                        <li>Purpose: Industry insights, informal introductions, market validation</li>
+                    </ul>
+                    
+                    <p><strong>Recruiter Engagement:</strong> Timing-dependent. Wait until clearer on decision timeline and geographic flexibility post-maternity leave.</p>
+                </div>
+            </div>
+
+            <!-- Trade-off Profile -->
+            <div class="canvas-section section-tradeoffs">
+                <h3>⚖️ Trade-Off Profile: The Security-Meaning Equation</h3>
+                <div class="canvas-content">
+                    <p><strong>Current Position (EY):</strong></p>
+                    <ul>
+                        <li>Security: ★★★★★ (established role, clear path, strong salary)</li>
+                        <li>Meaning: ★★☆☆☆ (feels transactional, moving away from delivery)</li>
+                        <li>Authenticity: ★★★☆☆ (partnership track requires BD skills she doesn't value)</li>
+                    </ul>
+                    
+                    <p><strong>Industry Transformation Role (Target):</strong></p>
+                    <ul>
+                        <li>Security: ★★★★☆ (good, but new environment)</li>
+                        <li>Meaning: ★★★★★ (aligned with strengths and values)</li>
+                        <li>Authenticity: ★★★★★ (leverages genuine strengths)</li>
+                        <li>Trade-off: Potential 10-15% income reduction, learning curve, some political navigation</li>
+                    </ul>
+                    
+                    <div class="critical-insight">
+                        The meaning-security ratio is shifting. She's ready to trade some security FOR more meaning. The question is finding the role where security remains adequate while meaning increases materially.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Potential Obstacles -->
+            <div class="canvas-section section-obstacles">
+                <h3>⚠️ Potential Obstacles & Limiting Beliefs</h3>
+                <div class="canvas-content">
+                    <p><strong>External Obstacles:</strong></p>
+                    <ul>
+                        <li>Timing: Maternity leave window limits availability for immediate transition</li>
+                        <li>Market perception: "EY Director" brand both asset and potential signal of external focus</li>
+                        <li>Sector gravity: Financial services transformation roles may require networking/visibility she hasn't built</li>
+                    </ul>
+                    
+                    <p><strong>Internal Obstacles:</strong></p>
+                    <ul>
+                        <li>Imposter syndrome in new environment (embedded vs external advisor perspective)</li>
+                        <li>Fear of choosing "wrongly" and disappointing expectations (family, Josh, self)</li>
+                        <li>Tendency to over-prepare rather than step into uncertainty</li>
+                    </ul>
+                    
+                    <p><strong>Identity Transition:</strong> Moving from "external expert" to "embedded leader" requires different confidence base. She has the capability; needs to own it differently.</p>
+                </div>
+            </div>
+
+            <!-- Next Steps & Decisions -->
+            <div class="canvas-section section-next">
+                <h3>✅ Next Steps & Decision Checkpoints</h3>
+                <div class="canvas-content">
+                    <p><strong>Decision Checkpoint (4-6 weeks):</strong> By [DATE], decide whether to actively pursue industry transformation opportunities or extend EY exploration.</p>
+                    
+                    <p><strong>Action Priorities:</strong></p>
+                    <ul>
+                        <li>Conversation with Josh about trade-off profile and household financial flexibility</li>
+                        <li>Identify 2-3 trusted contacts for confidential market exploration</li>
+                        <li>Gather salary/benefit benchmarks for target roles and organizations</li>
+                        <li>Define timing: explore now or after maternity leave window clarity?</li>
+                    </ul>
+                    
+                    <p><strong>Accountability:</strong> Check-in call in 2-3 weeks to review progress and maintain momentum. Self-coaching toolkit available for navigation between sessions.</p>
+                </div>
+            </div>
+
+            <!-- Timeline & Milestones -->
+            <div class="canvas-section section-toolkit">
+                <h3>📅 Timeline & Milestones | 🧠 Self-Coaching Toolkit</h3>
+                <div class="canvas-content">
+                    <div class="timeline-container">
+                        <div class="timeline-phase">
+                            <h4>Now - 4 Weeks (Decision Window)</h4>
+                            <ul>
+                                <li>Josh conversation about trade-offs</li>
+                                <li>Information gathering on target sector</li>
+                                <li>Network activation (select contacts)</li>
+                                <li>Clarity checkpoint: pursue actively or wait?</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <h4>Months 2-4 (Exploration Phase)</h4>
+                            <ul>
+                                <li>Maternity leave planning</li>
+                                <li>Informal market conversations</li>
+                                <li>Organization research (target companies)</li>
+                                <li>Recruiter engagement (if appropriate)</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="timeline-phase">
+                            <h4>Months 5-12 (Transition & Integration)</h4>
+                            <ul>
+                                <li>Opportunity evaluation against criteria</li>
+                                <li>Role transition planning</li>
+                                <li>Team handover at EY (if chosen)</li>
+                                <li>New role onboarding & establishment</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-top: 30px; padding: 20px; background: #f0f7ff; border-radius: 8px; border-left: 4px solid #2980b9;">
+                        <h4 style="color: #2c5aa0; margin-bottom: 15px;">Self-Coaching Questions (Use When Stuck)</h4>
+                        <ul style="font-size: 0.9em;">
+                            <li><strong>"What am I afraid of?"</strong> — Usually reveals real constraint vs imagined one</li>
+                            <li><strong>"What would my best friend tell me?"</strong> — Access wisdom without self-judgment</li>
+                            <li><strong>"What would I choose if I had zero financial pressure?"</strong> — Clarifies desire from need</li>
+                            <li><strong>"Who do I want to be in 5 years?"</strong> — Connects daily decision to identity</li>
+                            <li><strong>"What's the smallest next step I could take in the next 48 hours?"</strong> — Breaks paralysis into action</li>
+                            <li><strong>"What about this decision feels inauthentic?"</strong> — Checks values alignment</li>
+                            <li><strong>"If I chose wrong, what would I do?"</strong> — Reveals that "wrong choice" isn't actually catastrophic</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="canvas-section full-width">
-            <h2>🎯 Critical Success Factors for Next Role</h2>
-
-            <div style="background: linear-gradient(135deg, #f8f9ff, #fff5f8); padding: 25px; border-radius: 8px; border-left: 4px solid #667eea;">
-                <h3 style="color: #667eea; margin-bottom: 15px;">The "Both/And" Requirement</h3>
-                <p style="margin-bottom: 10px;">The NAB situation revealed Rachel's decision-making pattern clearly:</p>
-                <p style="font-weight: bold; font-size: 1.1em; color: #333;">She needs BOTH role alignment AND organisational behaviour/culture standards met.</p>
-                <p style="margin-top: 10px;">One without the other is insufficient. This explains why:</p>
-                <ul style="margin-left: 20px; margin-top: 10px; line-height: 1.8;">
-                    <li>NAB ticked practical boxes but process concerns made her withdraw</li>
-                    <li>EY provided security/advancement but restructure removed valued elements</li>
-                    <li>Partnership offers clear path but doesn't align with values/strengths</li>
-                </ul>
-                <p style="margin-top: 15px; font-style: italic;">Her selection criteria are stringent. This will take time and discernment - but she'll know when she's found it.</p>
-            </div>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 25px;">
-                <div style="background: #e8f5e8; padding: 20px; border-radius: 8px; border-left: 4px solid #27ae60;">
-                    <h4 style="color: #27ae60; margin-bottom: 10px;">Role Alignment</h4>
-                    <ul style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
-                        <li>Delivery leadership</li>
-                        <li>Transformation context</li>
-                        <li>Business-tech bridge</li>
-                        <li>Right seniority level</li>
-                        <li>Development opportunity</li>
-                    </ul>
-                </div>
-
-                <div style="background: #fff3cd; padding: 20px; border-radius: 8px; border-left: 4px solid #f39c12;">
-                    <h4 style="color: #f39c12; margin-bottom: 10px;">Culture/Team Quality</h4>
-                    <ul style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
-                        <li>Respectful interactions</li>
-                        <li>Collaborative environment</li>
-                        <li>People she respects</li>
-                        <li>Ethical organisation</li>
-                        <li>Good-faith actors</li>
-                    </ul>
-                </div>
-
-                <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; border-left: 4px solid #2196f3;">
-                    <h4 style="color: #2196f3; margin-bottom: 10px;">Practical Realities</h4>
-                    <ul style="margin-left: 20px; font-size: 0.95em; line-height: 1.6;">
-                        <li>Adequate security</li>
-                        <li>Family planning timing</li>
-                        <li>Geographic workability</li>
-                        <li>Maternity benefits</li>
-                        <li>Josh alignment</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="canvas-section full-width">
-            <h2>🔍 Coaching Observations & Insights</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-                <div>
-                    <h3 style="color: #667eea; margin-bottom: 15px;">Strengths as Decision-Maker</h3>
-                    <ul style="margin-left: 20px; line-height: 1.8;">
-                        <li><strong>High self-awareness:</strong> Reflective capacity, willingness to examine assumptions</li>
-                        <li><strong>Comfortable with ambiguity:</strong> Makes decisions despite incomplete information</li>
-                        <li><strong>Good judgment demonstrated:</strong> Track record of sound choices (Suncorp success, EY advancement)</li>
-                        <li><strong>Willing to confront difficult realisations:</strong> Acknowledged partnership misalignment honestly</li>
-                        <li><strong>Strong values foundation:</strong> Now explicitly articulated through virtues work</li>
-                        <li><strong>Pragmatic about trade-offs:</strong> Understands sunk costs, knows when to persist vs. pivot</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <h3 style="color: #f39c12; margin-bottom: 15px;">Development Areas</h3>
-                    <ul style="margin-left: 20px; line-height: 1.8;">
-                        <li><strong>Strategic career planning:</strong> Not naturally goal-oriented; reactive to opportunities rather than proactive</li>
-                        <li><strong>Confidence in own judgment:</strong> Slight tendency toward self-doubt despite strong capability</li>
-                        <li><strong>Political navigation tolerance:</strong> May need to build resilience for senior roles if pursuing corporate path</li>
-                        <li><strong>Long-term vision articulation:</strong> Needs help translating achievement drive into deliberate direction</li>
-                        <li><strong>Self-promotion comfort:</strong> Uncomfortable with visibility/positioning despite senior capability</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="insight-box" style="margin-top: 20px;">
-                <strong>Coaching Relationship Assessment:</strong> Rachel is engaged and doing genuine thinking work. Trust established - she's revealing uncertainty and vulnerability authentically. Exercises generating real insights, not just confirming existing views. Michael maintaining appropriate boundaries (facilitating, not solving). Pace appropriate - neither rushed nor meandering. Ready for Session 3 to complete architecture and transfer capability.
-            </div>
-        </div>
-
-        <div class="canvas-section full-width">
-            <h2>❓ The Real Question Rachel Is Facing</h2>
-
-            <div style="background: linear-gradient(135deg, #667eea, #764ba2); color: white; padding: 30px; border-radius: 8px; margin-top: 20px;">
-                <h3 style="color: white; margin-bottom: 20px; font-size: 1.3em;">Not: "Should I stay at EY or go to NAB?"</h3>
-                
-                <h3 style="color: white; margin-bottom: 15px; font-size: 1.3em;">But Rather:</h3>
-                
-                <p style="font-size: 1.15em; line-height: 1.8; margin-bottom: 20px;">
-                    "What career architecture serves the next decade of my life - honouring who I actually am, developing into the leader I want to become, accommodating the realities of dual-career partnership and family formation, and creating work that feels meaningful rather than just successful?"
-                </p>
-
-                <p style="font-size: 1.05em; line-height: 1.7; opacity: 0.95;">
-                    This is not about choosing between known options. It's about designing what kind of leader she wants to become and what kind of life she wants to build. That's why completing her decision framework matters - so she can evaluate any opportunity against what actually matters to her, rather than reacting to what presents itself.
-                </p>
-            </div>
-
-            <div style="margin-top: 25px; padding: 20px; background: #f8f9fa; border-radius: 8px; border-left: 4px solid #667eea;">
-                <h4 style="color: #667eea; margin-bottom: 10px;">The Actual Choice:</h4>
-                <p style="font-size: 1.05em; line-height: 1.7;">
-                    "Am I willing to trade consulting trajectory and immediate certainty for industry depth and the possibility of becoming the kind of integrated leader I admire - someone who leads through genuine care for people, creates tangible impact, and can be fully herself rather than maintaining two separate sides?"
-                </p>
-            </div>
-        </div>
-
-        <div class="canvas-section full-width" style="background: linear-gradient(135deg, #f8f9ff, #fff8f9);">
-            <h2>🎯 Session 3 Focus: Completing the Architecture</h2>
-
-            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 20px;">
-                <div>
-                    <h3 style="color: #667eea; margin-bottom: 15px;">What We'll Build Together</h3>
-                    <div class="strength-item">Complete trade-off framework with validated weights</div>
-                    <div class="strength-item">Specific zone of interest statement (sector, role, level, context)</div>
-                    <div class="strength-item">Evaluation tool for scoring any opportunity</div>
-                    <div class="strength-item">Information-gathering action plan</div>
-                    <div class="strength-item">Decision timeline and process</div>
-                    <div class="strength-item">Self-coaching questions and capability</div>
-                </div>
-
-                <div>
-                    <h3 style="color: #27ae60; margin-bottom: 15px;">What Rachel Will Leave With</h3>
-                    <div class="value-item">Clarity about values hierarchy and priorities</div>
-                    <div class="value-item">Systematic method for evaluating opportunities</div>
-                    <div class="value-item">Confidence in own judgment and decision-making</div>
-                    <div class="value-item">Understanding of trade-offs she's willing to make</div>
-                    <div class="value-item">Specific next actions with timeline</div>
-                    <div class="value-item">Independence - no longer needs coach to decide</div>
-                </div>
-            </div>
-
-            <div style="margin-top: 25px; padding: 25px; background: white; border-radius: 8px; border: 2px solid #667eea;">
-                <h4 style="color: #667eea; margin-bottom: 15px; font-size: 1.2em;">Success Metric</h4>
-                <p style="font-size: 1.05em; line-height: 1.7; color: #333;">
-                    By end of Session 3, Rachel will feel: <em>"I know what matters most to me... I know how to evaluate any option that comes along... I trust my judgment to make a good decision... There's no perfect answer, just trade-offs I'm willing to make... I can do this myself."</em>
-                </p>
-                <p style="margin-top: 15px; font-weight: bold; color: #667eea;">
-                    That shift - from external validation to internal authority - is what we're building toward.
-                </p>
-            </div>
-        </div>
-
     </div>
-</div>
-</body> </html> ```
+</body>
+</html>
